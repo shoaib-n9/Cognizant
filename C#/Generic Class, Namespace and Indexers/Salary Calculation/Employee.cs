@@ -7,23 +7,22 @@ namespace SalaryCalculation
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Y DOB { get; set; }
 
-        public static bool UsernamePasswordChecking<T>(T empId, Y empDOB, List<Employee<Y>> masterEmployeeList)
+        public string DOB { get; set; }
+
+        public bool UsernamePasswordChecking<T>(T empIdInput, Y empDOBInput)
         {
             int employeeIdInt;
-            if (!int.TryParse(empId.ToString(), out employeeIdInt))
+            if (!int.TryParse(empIdInput.ToString(), out employeeIdInt))
             {
                 return false;
             }
 
-            foreach (var emp in masterEmployeeList)
+            if (this.Id == employeeIdInt && this.DOB.Equals(empDOBInput.ToString(), StringComparison.Ordinal))
             {
-                if (emp.Id == employeeIdInt && emp.DOB.ToString().Equals(empDOB.ToString(), StringComparison.Ordinal))
-                {
-                    return true;
-                }
+                return true;
             }
+
             return false;
         }
 
