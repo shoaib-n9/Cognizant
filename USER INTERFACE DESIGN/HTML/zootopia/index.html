@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Zoo Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("zootopia.jpeg");
+      opacity: .90;
+      margin: 0;
+      padding: 20px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    h2 {
+      color: #ffffff;
+    }
+
+    form {
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #888888;
+      color: #000000;
+      margin-left: 260px;
+      margin-right: 260px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    select {
+      height: 38px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding-top: 15px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/submit" method="post">
+    <h2>Welcome to the Zoo!</h2>
+    <!--Create label and input for name here-->
+    <label for="userName">Name:</label>
+    <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+
+    <!--Create label and input for Email here-->
+    <label for="userEmail">Email:</label>
+    <input type="email" id="userEmail" name="userEmail" placeholder="Enter the Email" required>
+
+    <!--Create label and select for Ticket type  here-->
+    <label for="ticketSelection">Ticket Type:</label>
+    <select id="ticketSelection" name="Ticket-type">
+      <option value="adult">Adult</option>
+      <option value="child">Child</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <!--Create label and input for No of tickets  here-->
+    <label for="ticketQuantity">Number of Tickets:</label>
+    <input type="number" id="ticketQuantity" name="Num-tickets" min="1" max="10" required>
+
+    <!--Fill the Id for fieldset-->
+    <fieldset id="favoriteAnimals">
+      <!--Create label and input for Animals  here-->
+      <legend id="animalLegend">Favorite Animals:</legend>
+      <input type="checkbox" id="favLion" name="animal" value="Lion">
+      <label for="favLion">Lion</label><br>
+      <input type="checkbox" id="favElephant" name="animal" value="elephant">
+      <label for="favElephant">Elephant</label><br>
+      <input type="checkbox" id="favGiraffe" name="animal" value="giraffe">
+      <label for="favGiraffe">Giraffe</label>
+    </fieldset>
+
+    <!--Create label and textarea for comments  here-->
+    <label for="userComments">Comments:</label>
+    <textarea id="userComments" name="Comments" rows="4" cols="40"></textarea>
+
+    <!--create submit and reset-->
+    <input type="submit" id="formSubmit" value="Submit">
+    <input type="reset" id="formReset" value="Reset">
+  </form>
+</body>
+
+</html>
