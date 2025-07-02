@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.chat_container {
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.chat_header {
+  background-color: #075e54;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+.chat_title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.chat_body {
+  padding: 10px;
+}
+.message_text {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 10px;
+}
+.message_incoming {
+  align-items: flex-start;
+}
+
+.message_outgoing {
+  align-items: flex-end;
+}
+
+.chat_body > .message_incoming,
+.chat_body > .message_outgoing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.message_incoming .message_text {
+  background-color: #dbfac0;
+}
+
+.message_outgoing .message_text {
+  background-color: #d9f5c4;
+}
+
+.message_text + .message_timestamp {
+  font-size: 10px;
+  color: #010d0f;
+  margin-top: 2px;
+}
+
+.chat_footer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.message_input {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+.send_button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #075e54;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Fill the code for screens with a maximum width of 600px (Include the following blocks(chat_container and message_input classes) within the media query block). */
+
+@media (max-width: 600px) {
+  /* a. Styles attached to chat_container class and message_input class are given*/
+  /* b. Styles attached to chat_footer class and send_button class are to be added */
+
+  .chat_container {
+    max-width: 100%;
+    background-color: grey;
+  }
+  .message_input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .chat_footer {
+    flex-direction: column;
+  }
+
+  .send_button {
+    align-self: center;
+  }
+}
